@@ -1,0 +1,87 @@
+{
+    "id": "99c4d484-83d2-4314-b69e-240fdd276908",
+    "name": "hello",
+    "creationDate": 1609620434992,
+    "lastModifiedDate": 1609620480693,
+    "target": {
+        "provider": "MC",
+        "targetId": "000e706a-6c7b-4416-838a-5a298c9460ea",
+        "deploymentSettings": {
+            "jvm": {
+                "args": "-Dtestme=1"
+            },
+            "http": {
+                "inbound": {
+                    "publicUrl": "hello.aprf.redpill-linpro.com"
+                }
+            },
+            "sidecars": {
+                "anypoint-monitoring": {
+                    "image": "auto",
+                    "resources": {
+                        "cpu": {
+                            "limit": "50m",
+                            "reserved": "0m"
+                        },
+                        "memory": {
+                            "limit": "50Mi",
+                            "reserved": "50Mi"
+                        }
+                    }
+                }
+            },
+            "clustered": false,
+            "resources": {
+                "cpu": {
+                    "limit": "3700m",
+                    "reserved": "20m"
+                },
+                "memory": {
+                    "limit": "700Mi",
+                    "reserved": "700Mi"
+                }
+            },
+            "runtimeVersion": "3.9.4:20201019",
+            "updateStrategy": "rolling",
+            "lastMileSecurity": true,
+            "forwardSslSession": false,
+            "enforceDeployingReplicasAcrossNodes": false
+        },
+        "replicas": 1
+    },
+    "status": "APPLYING",
+    "application": {
+        "status": "RUNNING",
+        "desiredState": "STARTED",
+        "ref": {
+            "groupId": "00a0e9be-6085-4179-9bed-917f6643df29",
+            "artifactId": "hello-app",
+            "version": "1.0.1-SNAPSHOT",
+            "packaging": "zip"
+        },
+        "configuration": {
+            "mule.agent.application.properties.service": {
+                "properties": {
+                    "test": "value"
+                },
+                "applicationName": "hello"
+            }
+        }
+    },
+    "desiredVersion": "6c4baa91-7b69-49bf-8a16-be6fc5c69d51",
+    "replicas": [
+        {
+            "state": "STARTED",
+            "deploymentLocation": "000e706a-6c7b-4416-838a-5a298c9460ea",
+            "currentDeploymentVersion": "32679e15-ac29-45b5-bd34-1592d34ea32c",
+            "reason": ""
+        },
+        {
+            "state": "PENDING",
+            "deploymentLocation": "000e706a-6c7b-4416-838a-5a298c9460ea",
+            "currentDeploymentVersion": "6c4baa91-7b69-49bf-8a16-be6fc5c69d51",
+            "reason": "[Kubernetes] Container \"anypoint-monitoring\" - PodInitializing"
+        }
+    ],
+    "lastSuccessfulVersion": null
+}

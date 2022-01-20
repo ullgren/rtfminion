@@ -1,0 +1,5 @@
+anypoint:
+  user: someuser
+  password: somepassword
+  region: EU 
+  group: My Buissness

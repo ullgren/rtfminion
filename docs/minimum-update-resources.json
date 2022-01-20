@@ -1,0 +1,27 @@
+{
+  "target": {
+    "deploymentSettings": {
+      "http": {
+        "inbound": {
+          "publicUrl": "https://hello.aprf.redpill-linpro.com/"
+        }
+      },
+      "clustered": false,
+      "resources": {
+        "cpu": {
+          "limit": "2000m",
+          "reserved": "100m"
+        },
+        "memory": {
+          "limit": "500Mi",
+          "reserved": "500Mi"
+        }
+      }
+    },
+    "replicas": 1,
+    "type": "MC"
+  },
+  "application": {
+    "desiredState": "STARTED"
+  }
+}
